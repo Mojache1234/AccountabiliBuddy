@@ -1,14 +1,8 @@
-<%- include partials/header.ejs %>
+<h1> Home Page </h1>
+<a href="/new-goal">Create Goal</a>
+<a href="account">Account</a>
 
-  <body>
-    <h2>Login</h2>
-    <form>
-      <input type="email" name="email">
-      <input type="password" name="password">
-    </form>
-
-    <button>
-      Sign Up
-    </button>
-
-<%- include partials/footer.ejs %>
+<!-- loop goes here, render db goal stuff or 'no goals' message' -->
+<a href="/goal/1">
+  <div>Goal 1</div>
+</a>
