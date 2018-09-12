@@ -27,7 +27,7 @@ form {
   margin: 1em;
 }
 
-input {
+input, textarea {
   font-size: 1.5em;
   padding: 1em;
   background-color: white;
@@ -60,4 +60,11 @@ input {
   display:flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
