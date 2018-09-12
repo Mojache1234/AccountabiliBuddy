@@ -3,6 +3,7 @@ var router = express.Router();
 var mongo = require('mongodb');
 var db = require('monk')('34.222.253.29:27017/AccountabiliBuddy');
 var loginTable = db.get('loginTable');
+var session = require('express-session')
 
 router.get('/login', function(req, res) {
   console.log('Hello!')
@@ -18,17 +19,13 @@ router.get('/login', function(req, res) {
 router.post('/login', function(req, res, next) {
   loginTable.find(
     {
-      'username': 'mojache1234',
+      'email': req.body.email,
       'password': req.body.password
-    },
-    {
-      'username': 1,
-      'data': 1
-    }, (err, docs) => {
+    }, {}, (err, docs) => {
       if (err) res.json(500, err)
       else {
-        data = JSON.parse(docs)
-        res.redirect('/account/' + data['username'] + '/' + data['data'])
+        // Create a session
+        res.redirect('/account/')
       }
     })
 })
