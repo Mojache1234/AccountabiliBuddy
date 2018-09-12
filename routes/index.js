@@ -12,16 +12,18 @@ const update = require('./update')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   const dummyData = [{
+    id: 1,
     title: "Resume",
     description: "Make progress on writing resume",
-    commitment: "Video Call Friday 2pm",
+    commitment: "Friday 2pm",
     consequence: "Pay $5 to charity",
     buddy: "Ariel"
   },
   {
+    id: 2,
     title: "Workout",
     description: "Go to gym 3 times this week",
-    commitment: "Video Call Wednesday 7pm",
+    commitment: "Wednesday 7pm",
     consequence: "Pay $2 to charity",
     buddy: "Mike"
   }]
