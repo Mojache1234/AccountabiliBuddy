@@ -1,18 +1,26 @@
 <%- include partials/header.ejs %>
 
-<h1> Create Goal </h1>
-<form action="/new-goal" method="post">
-  <h3>Buddy's username:</h3>
+<form action="/new-goal" method="post" class="col-lg-6 col-sm-12">
+  <h1> Create Goal </h1>
+  <br>
+  <h3>Buddy's email:</h3>
   <input type="text" name="buddy">
   <h3>Goal Title:</h3>
   <input type="text" name="title">
   <h3>Goal Description:</h3>
-  <input type="text" name="description">
-  <h3>commitment </h3>
-  <h3>consequence</h3> 
+  <textarea rows="4" cols="50" name="description"></textarea>
+  <h3>Videocall Commitment</h3>
+  <input type="datetime-local" name="">
+  <h3>Consequence</h3> 
+  <p>I pledge to donate the following ammount to to a charity of my choice if I fail to meet with my buddy at the appointed time.</p>
+  <span style="font-size: 2.5em">$<input  name="dollars" type="number" min="1" value="5" style="font-size: .8em; padding: .3em; width: 3.5em;"></span>
+  
+
+  
   <input class="btn" type="submit" name="Submit">
 </form>
 
-<p>maybe add a modal for successful submission?</p>
+<!-- maybe add a modal for successful submission? -->
+
 
 <%- include partials/footer.ejs %>
