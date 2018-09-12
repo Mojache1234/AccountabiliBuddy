@@ -48,6 +48,12 @@ Host: <input id="video" type="checkbox" checked></input>
 
 <script language="javascript">
 
+  var mongo = require('mongodb');
+  var monk = require('monk')('34.222.253.29/AccountabiliBuddy');
+  var goals = monk.get('goalSessions');
+  var express = require('express');
+  var router = express.Router();
+
 if(!AgoraRTC.checkSystemRequirements()) {
   alert("Your browser does not support WebRTC!");
 }
@@ -217,23 +223,6 @@ function getDevices() {
   });
 }
 
-function get_channel(){
- var date = new Date();
-var components = [
-    date.getYear(),
-    date.getMonth(),
-    date.getDate(),
-    date.getHours(),
-    date.getMinutes(),
-    date.getSeconds(),
-    date.getMilliseconds()
-];
-
-var id = components.join("");
-var id2 = id.toString()
-
-return id2;
-}
 
 //audioSelect.onchange = getDevices;
 //videoSelect.onchange = getDevices;
