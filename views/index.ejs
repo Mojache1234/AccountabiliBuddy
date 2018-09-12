@@ -1,8 +1,27 @@
-<h1> Home Page </h1>
-<a href="/new-goal">Create Goal</a>
-<a href="/account">Account</a>
+<%- include partials/header.ejs %>
 
-<!-- loop goes here, render db goal stuff or 'no goals' message' -->
-<a href="/goal/1">
-  <div>Goal 1</div>
-</a>
+<button class="btn col-lg-6 col-sm-12" onclick="location.href='/new-goal'">Create Goal</button>
+
+<% if(goals[0]){
+console.log("goals: ", goals)
+  goals.forEach((goal)=> { 
+  console.log("goal:", goal)%>
+<!-- replace number above with [variable].length-->
+  <div class="goal-list col-lg-6 col-sm-12">
+    <div class="sp-btwn">
+      <h2><%= goal.title %></h2>
+      <p><%= goal.buddy %></p>
+    </div>
+
+    <p><%= goal.description %></p>
+    <p><%= goal.commitment %></p>
+    <p><%= goal.consequence %></p>
+
+  </div>
+<% })
+  } else { %>
+  <h2 class="goal-list col-lg-6 col-sm-12">You have no pending goals at this time</h2>
+<% } %>
+<button class="btn col-lg-6 col-sm-12" onclick="location.href='/account'">Account</button>
+
+<%- include partials/footer.ejs %>

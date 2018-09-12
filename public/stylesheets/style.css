@@ -1,8 +1,63 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(197, 218, 231);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(149, 199, 213);
+  padding: 2em;
+  margin: 1em;
+}
+
+input {
+  font-size: 1.5em;
+  padding: 1em;
+  background-color: white;
+  margin: 0px 0px 2em 0px;
+  width: 75%;
+}
+
+.btn {
+  padding: 1.5em;
+  font-size: 1.5em;
+  background-color: rgb(91, 164, 180);
+}
+
+.logo {
+  font-family: 'Oregano', cursive;
+  font-size: 8em;
+  padding: .25em;
+}
+
+.goal-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(149, 199, 213);
+  padding: 2em;
+  margin: 1em;
+}
+
+.sp-btwn{
+  display:flex;
+  flex-direction: row;
+  align-items: space-between;
 }

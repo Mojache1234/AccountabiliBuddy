@@ -1,14 +1,18 @@
+<%- include partials/header.ejs %>
+
 <h1> Create Goal </h1>
 <form action="/new-goal" method="post">
-  Buddy's username <br>
-  <input type="text" name="buddy">  <br>
-  Goal Title <br>
+  <h3>Buddy's username:</h3>
+  <input type="text" name="buddy">
+  <h3>Goal Title:</h3>
   <input type="text" name="title">
-  Goal Description <br>
-  <input type="text" name="description"> <br>
-  commitment *figure this out later, modal maybe? calendar library?*
-  consequence $$$ *again, modal maybe? paypal?*
-  <input type="submit" name="Submit">
+  <h3>Goal Description:</h3>
+  <input type="text" name="description">
+  <h3>commitment </h3>
+  <h3>consequence</h3> 
+  <input class="btn" type="submit" name="Submit">
 </form>
 
 <p>maybe add a modal for successful submission?</p>
+
+<%- include partials/footer.ejs %>

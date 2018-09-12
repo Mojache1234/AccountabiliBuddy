@@ -1,9 +1,13 @@
-<%- include partials/header.ejs %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Agora Web Sample</title>
+<link rel="stylesheet" href="vendor/bootstrap.min.css">
+<script src="AgoraRTCSDK-2.4.0.js"></script>
+<script src="vendor/jquery.js"></script>
+</head>
 
 <body>
-  <h1>
-  Goal <%= goalId %>
-</h1>
 <div id="div_device" class="panel panel-default">
 <div class="select">
 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
@@ -15,6 +19,8 @@
 
 <div id="div_join" class="panel panel-default">
 <div class="panel-body">
+App ID: <input id="appId" type="text" value="" size="36"></input>
+Channel: <input id="channel" type="text" value="1000" size="4"></input>
 Host: <input id="video" type="checkbox" checked></input>
 <button id="join" class="btn btn-primary" onclick="join()">Join</button>
 <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
@@ -44,12 +50,6 @@ Host: <input id="video" type="checkbox" checked></input>
 
 <script language="javascript">
 
-  var mongo = require('mongodb');
-  var monk = require('monk')('34.222.253.29/AccountabiliBuddy');
-  var goals = monk.get('goalSessions');
-  var express = require('express');
-  var router = express.Router();
-
 if(!AgoraRTC.checkSystemRequirements()) {
   alert("Your browser does not support WebRTC!");
 }
@@ -75,14 +75,13 @@ var videoSelect = document.querySelector('select#videoSource');
 function join() {
   document.getElementById("join").disabled = true;
   document.getElementById("video").disabled = true;
-  var channel_key = '';
-  channel = get_channel();
-  console.log(channel_key)
-  console.log("Init AgoraRTC client with App ID: "+ "921b848f07654d3288ba264ea63aaa58");
+  var channel_key = null;
+
+  console.log("Init AgoraRTC client with App ID: " + appId.value);
   client = AgoraRTC.createClient({mode: 'interop'});
-  client.init("921b848f07654d3288ba264ea63aaa58", function () {
+  client.init(appId.value, function () {
     console.log("AgoraRTC client initialized");
-    client.join(channel_key, channel, null, function(uid) {
+    client.join(channel_key, channel.value, null, function(uid) {
       console.log("User " + uid + " join channel successfully");
 
       if (document.getElementById("video").checked) {
@@ -219,13 +218,9 @@ function getDevices() {
   });
 }
 
-
 //audioSelect.onchange = getDevices;
 //videoSelect.onchange = getDevices;
 getDevices();
 </script>
 </body>
 </html>
-
-<%- include partials/footer.ejs %>
-

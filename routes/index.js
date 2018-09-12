@@ -11,7 +11,21 @@ const update = require('./update')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  const dummyData = [{
+    title: "Resume",
+    description: "Make progress on writing resume",
+    commitment: "Video Call Friday 2pm",
+    consequence: "Pay $5 to charity",
+    buddy: "Ariel"
+  },
+  {
+    title: "Workout",
+    description: "Go to gym 3 times this week",
+    commitment: "Video Call Wednesday 7pm",
+    consequence: "Pay $2 to charity",
+    buddy: "Mike"
+  }]
+  res.render('index', { goals:dummyData});
 });
 
 router.use('/', account)
