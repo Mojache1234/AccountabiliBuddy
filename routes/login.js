@@ -28,8 +28,9 @@ router.post('/login', function(req, res, next) {
       if (err) res.json(500, err)
       else {
         data = {
-          'email': 'mojache1234@gmail.com',
-          'name': 'Ariel'
+          'email': results[0].email,
+          'name': results[0].name,
+          'goals': results[0].goals
         }
         req.session.data = data
         res.redirect('/')

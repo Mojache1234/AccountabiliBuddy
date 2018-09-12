@@ -37,23 +37,33 @@ router.use((req, res, next) => {
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  const dummyData = [{
-    id: 1,
-    title: "Resume",
-    description: "Make progress on writing resume",
-    commitment: "Friday 2pm",
-    consequence: "Pay $5 to charity",
-    buddy: "Ariel"
-  },
-  {
-    id: 2,
-    title: "Workout",
-    description: "Go to gym 3 times this week",
-    commitment: "Wednesday 7pm",
-    consequence: "Pay $2 to charity",
-    buddy: "Mike"
-  }]
-  res.render('index', { goals:dummyData});
+  var i = 0
+  var data = []
+  for (var i = 0; i < req.session.data.goals.length; i++) {
+    var goal = req.session.data.goals[i]
+    var time = new Date(goal.datetime)
+    var d = new Date();
+    var weekday = new Array(7);
+    weekday[0] =  "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+
+    var n = weekday[d.getDay()];
+    entry = {
+      id: i,
+      title: goal.goal_title,
+      description: goal.goal_desc,
+      commitment: weekday[time.getWork()] + ' ' + time.getMonth() + ' ' + time.getDate(),
+      consequence: goal.consequence,
+      buddy: goal.buddy
+    }
+    data.push(entry)
+  }
+  res.render('index', { goals: data });
 });
 
 router.use('/', account)
