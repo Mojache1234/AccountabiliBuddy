@@ -6,7 +6,7 @@
 console.log("goals: ", goals)
   goals.forEach((goal)=> { 
   console.log("goal:", goal)%>
-  <button class="btn goal-list col-md-4 col-sm-12 sp-btwn" onclick="location.href='/goal/<%= goal.id %>'">
+  <button class="btn goal-list sp-btwn col-md-6 col-sm-12 " onclick="location.href='/goal/<%= goal.id %>'">
     <!-- <div class="sp-btwn"> -->
       <h2><%= goal.title %></h2>
       <h3><%= goal.commitment %></h3>
