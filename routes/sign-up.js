@@ -12,7 +12,8 @@ router.post('/sign-up', function(req, res){
   new_user = {
     email: req.body.email,
     name: req.body.name,
-    password: req.body.password
+    password: req.body.password,
+    goals: []
   }
   loginTable.insert(new_user)
   res.redirect('/')

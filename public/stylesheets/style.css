@@ -35,6 +35,10 @@ input, textarea {
   width: 75%;
 }
 
+label, select {
+  margin: .5em;
+}
+
 .btn {
   padding: 1.5em;
   margin: .5em;
@@ -48,22 +52,20 @@ input, textarea {
   padding: .25em;
 }
 
+.sp-btwn{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
 .goal-list{
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: rgb(149, 199, 213);
   font-size: 2em;
-  width: 80%;
   margin: 1em;
   padding: .5em;
-}
-
-.sp-btwn{
-  width: 100%;
-  display:flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 .row{
