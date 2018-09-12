@@ -6,18 +6,12 @@
 console.log("goals: ", goals)
   goals.forEach((goal)=> { 
   console.log("goal:", goal)%>
-<!-- replace number above with [variable].length-->
-  <div class="goal-list col-lg-6 col-sm-12">
-    <div class="sp-btwn">
+  <button class="btn goal-list col-lg-6 col-sm-12 sp-btwn" onclick="location.href='/goal/<%= goal.id %>'">
+    <!-- <div class="sp-btwn"> -->
       <h2><%= goal.title %></h2>
-      <p><%= goal.buddy %></p>
-    </div>
-
-    <p><%= goal.description %></p>
-    <p><%= goal.commitment %></p>
-    <p><%= goal.consequence %></p>
-
-  </div>
+      <h3><%= goal.commitment %></h3>
+    <!-- </div> -->
+  </button>
 <% })
   } else { %>
   <h2 class="goal-list col-lg-6 col-sm-12">You have no pending goals at this time</h2>
