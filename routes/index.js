@@ -39,7 +39,7 @@ router.use((req, res, next) => {
 router.get('/', function(req, res, next) {
   var i = 0
   var data = []
-  console.log(req.session.data.goals.length)
+
   for (var i = 0; i < req.session.data.goals.length; i++) {
     var goal = req.session.data.goals[i]
     var time = new Date(goal.datetime)

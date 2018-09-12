@@ -6,35 +6,38 @@
 </head>
 <body>
   <h1>
-  <%= dummyData.goal_title %>
-</h1>
-<div class="goal-list">
-  <p>Call scheduled for <%= dummyData.commitment %> with <%= dummyData.buddy %> </p>
+    <%= dummyData.goal_title %>
+  </h1>
+  <div class="goal-list col-sm-12 col-md-8">
+    <p>Call scheduled for <%= dummyData.commitment %> with <%= dummyData.buddy %> </p>
   </div>
-<div id="div_device" class="panel panel-default goal-list">
 
-<label for="audioSource">Audio source: </label><select id="audioSource"></select>
+  <div id="div_device" class="panel panel-default goal-list col-sm-12 col-md-8">
 
-
-<label for="videoSource">Video source: </label><select id="videoSource"></select>
-
+  <label for="audioSource">Audio source: </label>
+  <select id="audioSource"></select>
 
 
-<div id="div_join" class="panel panel-default">
-  <div class="panel-body row">
-      <span class="col-sm">
-        <input id="video" type="checkbox" checked>video
-      </span>
-      <button id="join" class="btn btn-primary col-sm" onclick="join()">Join</button>
-      <button id="leave" class="btn btn-primary col-sm" onclick="leave()">Leave</button>
-    </div>
-</div>
+  <label for="videoSource">Video source: </label>
+  <select id="videoSource"></select>
 
-<div id="video" style="margin:0 auto;">
-    <div id="agora_local" ></div>
-</div>
-</div>
+
+
+  <div id="div_join" class="panel panel-default">
+    <div class="panel-body row">
+        <span class="col-sm">
+          <input id="video" type="checkbox" checked>video
+        </span>
+        <button id="join" class="btn btn-primary col-sm" onclick="join()">Join</button>
+        <button id="leave" class="btn btn-primary col-sm" onclick="leave()">Leave</button>
+      </div>
   </div>
+
+  <div id="video" style="margin:0 auto;">
+      <div id="agora_local" ></div>
+  </div>
+</div>
+</div>
 
 <script language="javascript">
 
