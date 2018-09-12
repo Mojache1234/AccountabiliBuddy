@@ -1,8 +1,50 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(197, 218, 231);
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 a {
   color: #00B7FF;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(149, 199, 213);
+  padding: 2em;
+  margin: 1em;
+  width: 80%;
+}
+
+input {
+  /*margin: 1em;*/
+  padding: 1em;
+  background-color: white;
+  margin: 0px 0px 2em 0px;
+  width: 75%;
+}
+
+.btn {
+  padding: 1.5em 2.5em;
+  font-size: 1em;
+  background-color: rgb(91, 164, 180);
+  border: rgb(91, 164, 180), outset, 10px;
+}
+
+.logo {
+  font-family: 'Oregano', cursive;
+  font-size: 4em;
+}
+
