@@ -20,20 +20,22 @@ router.get('/login', function(req, res) {
 })
 
 router.post('/login', function(req, res, next) {
-  loginTable.find(
+  loginTable.findOne(
     {
       'email': req.body.email,
       'password': req.body.password
     }, {}, (err, results) => {
       console.log('results: ', results)
       if (err) res.json(500, err)
-      else {
+      else if (results) {
         data = {
-          'email': results[0].email,
-          'name': results[0].name,
-          'goals': results[0].goals
+          'email': results.email,
+          'name': results.name,
+          'goals': results.goals
         }
         req.session.data = data
+        res.redirect('/')
+      } else {
         res.redirect('/')
       }
     })
