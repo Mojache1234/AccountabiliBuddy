@@ -14,15 +14,13 @@ router.get('/login', function(req, res) {
 //   res.redirect('/')
 // })
 
-router.post('/login', function(req, res) {
-  loginTable.find({username: req.body.email.split()[0], password: req.body.password}, '-password').then((docs) => {
-    console.log(docs)
-    params = {
-      'username': docs.username,
-      'data': docs.data
-    }
-    res.redirect('/account')
-  })
+router.post('/login', function(req, res, next) {
+  loginTable.find({username: req.body.email.split()[0], password: req.body.password}, '-password')
+    .then((docs) => {
+      console.log(docs)
+      // res.redirect('/account/' + docs.username + '/' + docs.data)
+      res.redirect('/account/mojache1234/hello world')
+    })
 })
 
 module.exports = router;
