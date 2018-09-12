@@ -31,7 +31,7 @@ router.post('/login', function(req, res, next) {
         data = {
           'email': results.email,
           'name': results.name,
-          'goals': results.goals
+          'goals': (results.goals) ? results.goals : []
         }
         req.session.data = data
         res.redirect('/')
