@@ -57,7 +57,7 @@ router.get('/', function(req, res, next) {
       id: i,
       title: goal.goal_title,
       description: goal.goal_desc,
-      commitment: weekday[time.getWork()] + ' ' + time.getMonth() + ' ' + time.getDate(),
+      commitment: weekday[time.getDay()] + ' ' + time.getMonth() + ' ' + time.getDate(),
       consequence: goal.consequence,
       buddy: goal.buddy
     }

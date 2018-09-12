@@ -25,6 +25,7 @@ router.post('/login', function(req, res, next) {
       'email': req.body.email,
       'password': req.body.password
     }, {}, (err, results) => {
+      console.log('results: ', results)
       if (err) res.json(500, err)
       else {
         data = {
