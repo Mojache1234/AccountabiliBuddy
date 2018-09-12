@@ -25,11 +25,10 @@ form {
   background-color: rgb(149, 199, 213);
   padding: 2em;
   margin: 1em;
-  width: 80%;
 }
 
 input {
-  /*margin: 1em;*/
+  font-size: 1.5em;
   padding: 1em;
   background-color: white;
   margin: 0px 0px 2em 0px;
@@ -37,14 +36,28 @@ input {
 }
 
 .btn {
-  padding: 1.5em 2.5em;
-  font-size: 1em;
+  padding: 1.5em;
+  font-size: 1.5em;
   background-color: rgb(91, 164, 180);
-  border: rgb(91, 164, 180), outset, 10px;
 }
 
 .logo {
   font-family: 'Oregano', cursive;
-  font-size: 4em;
+  font-size: 8em;
+  padding: .25em;
 }
 
+.goal-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(149, 199, 213);
+  padding: 2em;
+  margin: 1em;
+}
+
+.sp-btwn{
+  display:flex;
+  flex-direction: row;
+  align-items: space-between;
+}
