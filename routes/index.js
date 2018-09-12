@@ -24,7 +24,6 @@ router.use((req, res, next) => {
     loggedIn,
     data
   }
-  console.log('I\'m here')
   next()
 })
 

@@ -20,10 +20,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session({
-  secret: 'fasdjfpiewqurlksajdf',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
+    secret: 'asfasfa3asfa',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+        secure: false,
+        maxAge: 2160000000
+    }
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
