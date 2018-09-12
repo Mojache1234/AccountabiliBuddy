@@ -17,8 +17,6 @@
 Host: <input id="video" type="checkbox" checked></input>
 <button id="join" class="btn btn-primary" onclick="join()">Join</button>
 <button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-<button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
-<button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
 </div>
 </div>
 
@@ -136,6 +134,7 @@ function join() {
         console.log("Renew channel key failed: ", err);
       });
     }
+
   });
 
 
@@ -172,6 +171,7 @@ function join() {
       console.log(evt.uid + " leaved from this channel");
     }
   });
+  publish();
 }
 
 function leave() {
@@ -181,6 +181,7 @@ function leave() {
   }, function (err) {
     console.log("Leave channel failed");
   });
+  unpublish();
 }
 
 function publish() {
