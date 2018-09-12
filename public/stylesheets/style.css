@@ -35,6 +35,10 @@ input, textarea {
   width: 75%;
 }
 
+label, select {
+  margin: .5em;
+}
+
 .btn {
   padding: 1.5em;
   margin: .5em;
