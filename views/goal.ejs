@@ -1,14 +1,19 @@
 <%- include partials/header.ejs %>
-
+<head>
+<title>Agora Web Sample</title>
+<script src="/AgoraRTCSDK-2.4.0.js"></script>
+<script src="/vendor/jquery.js"></script>
+</head>
 <body>
   <h1>
   Goal <%= goalId %>
 </h1>
 <div id="div_device" class="panel panel-default">
-<div class="select">
-</div>
-<div class="select">
 
+<label for="audioSource">Audio source: </label><select id="audioSource"></select>
+</div>
+
+<label for="videoSource">Video source: </label><select id="videoSource"></select>
 </div>
 </div>
 
@@ -40,12 +45,6 @@ Host: <input id="video" type="checkbox" checked></input>
 </div>
 
 <script language="javascript">
-
-  var mongo = require('mongodb');
-  var monk = require('monk')('34.222.253.29/AccountabiliBuddy');
-  var goals = monk.get('goalSessions');
-  var express = require('express');
-  var router = express.Router();
 
 if(!AgoraRTC.checkSystemRequirements()) {
   alert("Your browser does not support WebRTC!");
@@ -134,7 +133,6 @@ function join() {
         console.log("Renew channel key failed: ", err);
       });
     }
-
   });
 
 
@@ -181,7 +179,6 @@ function leave() {
   }, function (err) {
     console.log("Leave channel failed");
   });
-  unpublish();
 }
 
 function publish() {
@@ -219,6 +216,23 @@ function getDevices() {
   });
 }
 
+function get_channel(){
+ var date = new Date();
+var components = [
+    date.getYear(),
+    date.getMonth(),
+    date.getDate(),
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds(),
+    date.getMilliseconds()
+];
+
+var id = components.join("");
+var id2 = id.toString()
+
+return id2;
+}
 
 //audioSelect.onchange = getDevices;
 //videoSelect.onchange = getDevices;
@@ -226,6 +240,4 @@ getDevices();
 </script>
 </body>
 </html>
-
 <%- include partials/footer.ejs %>
-
