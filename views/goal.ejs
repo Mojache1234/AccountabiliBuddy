@@ -6,7 +6,7 @@
 </head>
 <body>
   <h1>
-  Goal <%= goalId %>
+  <%= dummyData.title %>
 </h1>
 <div id="div_device" class="panel panel-default">
 
@@ -18,11 +18,17 @@
 </div>
 
 <div id="div_join" class="panel panel-default">
-<div class="panel-body">
-Host: <input id="video" type="checkbox" checked></input>
-<button id="join" class="btn btn-primary" onclick="join()">Join</button>
-<button id="leave" class="btn btn-primary" onclick="leave()">Leave</button>
-</div>
+  <div class="panel-body">
+  <div class="row">
+    <span class="col-sm">
+      <input id="video" type="checkbox" checked>video
+    </span>
+  
+    <button id="join" class="btn btn-primary col-sm" onclick="join()">Join</button>
+    <button id="leave" class="btn btn-primary col-sm" onclick="leave()">Leave</button>
+  </div>
+    
+  </div>
 </div>
 
     <!--style>

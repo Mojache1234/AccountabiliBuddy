@@ -72,3 +72,9 @@ input, textarea {
 .cancel{
   background-color: rgb(214, 194, 212);
 }
+
+#join, #leave{
+  padding: 1em;
+  margin: .5em 2em;
+  font-size: 1em;
+}
