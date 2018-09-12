@@ -10,9 +10,11 @@ router.get('/goal/:goalId', function(req, res){
   console.log(goalId)
 
   const dummyData = {
-    title: "Workout",
-    description: "Gonna go to the gym and do all the things and get ripped."
-
+    goal_title: "Workout",
+    goal_desc: "Gonna go to the gym and do all the things and get ripped.",
+    buddy: 'mojache1234@gmail.com',
+    commitment: 'October 3rd, 5pm',
+    consequence: 5.0,
   }
   res.render('goal', {dummyData})
 })

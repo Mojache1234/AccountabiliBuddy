@@ -6,49 +6,35 @@
 </head>
 <body>
   <h1>
-  <%= dummyData.title %>
+  <%= dummyData.goal_title %>
 </h1>
-<div id="div_device" class="panel panel-default">
+<div class="goal-list">
+  <p>Call scheduled for <%= dummyData.commitment %> with <%= dummyData.buddy %> </p>
+  </div>
+<div id="div_device" class="panel panel-default goal-list">
 
 <label for="audioSource">Audio source: </label><select id="audioSource"></select>
-</div>
+
 
 <label for="videoSource">Video source: </label><select id="videoSource"></select>
-</div>
-</div>
+
+
 
 <div id="div_join" class="panel panel-default">
-  <div class="panel-body">
-  <div class="row">
-    <span class="col-sm">
-      <input id="video" type="checkbox" checked>video
-    </span>
-  
-    <button id="join" class="btn btn-primary col-sm" onclick="join()">Join</button>
-    <button id="leave" class="btn btn-primary col-sm" onclick="leave()">Leave</button>
-  </div>
-    
-  </div>
-</div>
-
-    <!--style>
-    .video__box{width:910px; margin:0 auto; overflow:hidden;}
-    .video__main{ width:810px; height:607px;float:left }
-    .video__list{ width:200px; height:607px; float:left;}
-    .video__item{ width:200px; height:174px; hei background:url(/img/icon_live.png) center center no-repeat; }
-    </style>
-    <div class="video__main">
+  <div class="panel-body row">
+      <span class="col-sm">
+        <input id="video" type="checkbox" checked>video
+      </span>
+      <button id="join" class="btn btn-primary col-sm" onclick="join()">Join</button>
+      <button id="leave" class="btn btn-primary col-sm" onclick="leave()">Leave</button>
     </div>
-    <div class="video__list">
-        <div class="video__item"></div>
-        <div id="video" class="video__item">
-            <div id="agora_local"></div>
-        </div>
-    </div-->
+</div>
 
 <div id="video" style="margin:0 auto;">
-    <div id="agora_local" style="float:right;width:210px;height:147px;display:inline-block;"></div>
+    <div id="agora_local" ></div>
 </div>
+</div>
+  </div>
 
 <script language="javascript">
 
@@ -75,8 +61,16 @@ var audioSelect = document.querySelector('select#audioSource');
 var videoSelect = document.querySelector('select#videoSource');
 
 function join() {
+  console.log("\n video: \n", document.getElementById("agora_local").style.display)
   document.getElementById("join").disabled = true;
   document.getElementById("video").disabled = true;
+  document.getElementById("agora_local").className += "video"
+  // const agora_vid = document.getElementById("agora_local")
+  // agora_vid.style.width = '100%'
+  // agora_vid.style.height = '100%'
+  document.getElementById("agora_local").style.display = "inline-block"
+  // style="float:right;width:210px;height:147px;"
+  console.log("\n video: \n", document.getElementById("agora_local").style.display)
   var channel_key = '';
   channel = get_channel();
   console.log(channel_key)
