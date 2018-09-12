@@ -68,3 +68,7 @@ input, textarea {
   align-items: center;
   justify-content: center;
 }
+
+.cancel{
+  background-color: rgb(214, 194, 212);
+}
